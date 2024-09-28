@@ -1,0 +1,2 @@
+export const ACCEPT = 'application/json';
+export const AUTHORIZATION = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYWEzMTMwNDQxNmE5ODk1NjI5NmViM2JjN2I5Mjc5YyIsIm5iZiI6MTcyNjQzMTMxNi41MTg1NDgsInN1YiI6IjY2ZTczYTAwZTgyMTFlY2QyMmIwYjRmNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rUmKSEIdbKNjtPLAxyDLU8ddaZ9z4AJc5vJ9jDj7KSE';
