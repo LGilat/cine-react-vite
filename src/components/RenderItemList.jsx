@@ -40,6 +40,7 @@ export default function RenderItemList({ items, handleMovieClick }) {
 const styles = {
     container: {
         display: 'flex',
+        justifyContent: 'center',
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'center',
