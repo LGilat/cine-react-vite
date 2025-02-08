@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './Header.css'; // Import the CSS file
 
 const styles = {
   header: {
@@ -16,18 +17,14 @@ const styles = {
   },
   searchContainer: { // New style for the search area
     display: 'flex',
-    width: '100%', // Make search fill the width
     marginBottom: '10px', // Space between search and links
   },
   searchForm: {
     display: 'flex',
-    flexGrow: 1, // Allow search input to grow
     alignItems: 'center',
-    width:'100%'
   },
   searchInput: {
     padding: '5px',
-    flexGrow: 1, // Allow input to expand
     marginRight: '10px',
     width:'100%'
   },
@@ -51,7 +48,6 @@ const styles = {
     padding: '10px',
     width: '100%', // Make links fill the width
     textAlign: 'center', // Center link text
-    borderBottom: '1px solid #ddd', // Add separators between links (optional)
   },
   hamburgerButton: { // Style for the hamburger button
     display: 'flex',
@@ -68,12 +64,13 @@ const styles = {
     backgroundColor: '#333',
   },
   desktopNav: {
-    display: 'flex',
+    display: 'none',
     alignItems: 'center',
     justifyContent: 'space-around',
     width: '100%',
-    display: 'none', // Hide desktop navigation by default
-  }
+    
+  },
+  
 };
 
 
@@ -97,7 +94,7 @@ export default function Header({ logoImage }) {
 
 
   return (
-    <header style={styles.header}>
+    <header className='header'>
       <img src={logoImage} alt="Logo" style={styles.logo} />
       <div style={styles.searchContainer}>
         <form onSubmit={handleSearch} style={styles.searchForm}>
@@ -113,7 +110,7 @@ export default function Header({ logoImage }) {
       </div>
 
        {/* Hamburger menu for mobile */}
-       <div style={styles.hamburgerButton} onClick={toggleMobileMenu}>
+       <div className='hamburgerButton' onClick={toggleMobileMenu}>
         <div style={styles.hamburgerBar} />
         <div style={styles.hamburgerBar} />
         <div style={styles.hamburgerBar} />
@@ -122,7 +119,7 @@ export default function Header({ logoImage }) {
 
 
       {/* Conditionally render the navigation links */}
-      <nav style={isMobileMenuOpen ? styles.nav : styles.desktopNav}>
+      <nav className='nav-links'>
         <Link to="/" style={styles.link}>Now Playing</Link>
         <Link to="/upcoming" style={styles.link}>Upcoming</Link>
         <Link to="/top-rated" style={styles.link}>Top Rated</Link>

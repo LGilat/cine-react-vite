@@ -1,0 +1,39 @@
+.header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Mobile default: vertical */
+    align-items: center;
+  }
+  
+  /* ... other styles ... */
+  
+  .hamburgerButton {  /* Mobile default: visible */
+    display: flex; /* Or whatever display you need */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+
+
+@media (min-width: 1200px) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom-color: rebeccapurple;
+        border-bottom-width: 2px;
+    }
+    .hamburgerButton{
+        display: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+}
