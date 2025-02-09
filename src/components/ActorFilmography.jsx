@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ACCEPT, AUTHORIZATION } from '../consts/CONSTS';
 import './ActorFilmography.css';
@@ -41,31 +41,31 @@ export default function ActorFilmography() {
 
     return (
         <div className="filmography-container">
-        <h2 className="title-filmografia">Filmography</h2>
-        <table className="filmography-table">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Character</th>
-                    <th>Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                {actorFilmography.map((movie) => (
-                    <tr key={movie.id}>
-                        <td> <Link to={`/movie/${movie.id}`}>{movie.title}</Link></td>
-                        <td>{movie.character || 'Desconocido'}</td>
-                        <td>{new Date(movie.release_date).getFullYear() || 'desconocido'}</td>
+            <h2 className="title-filmografia">Filmography</h2>
+            <table className="filmography-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Character</th>
+                        <th>Year</th>
                     </tr>
-                ))}
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colSpan="3">Total de películas: {actorFilmography.length}</td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    {actorFilmography.map((movie) => (
+                        <tr key={movie.id}>
+                            <td> <Link to={`/movie/${movie.id}`}>{movie.title}</Link></td>
+                            <td>{movie.character || 'Desconocido'}</td>
+                            <td>{new Date(movie.release_date).getFullYear() || 'desconocido'}</td>
+                        </tr>
+                    ))}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colSpan="3">Total de películas: {actorFilmography.length}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     )
 }
 

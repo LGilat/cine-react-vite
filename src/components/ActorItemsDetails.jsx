@@ -1,9 +1,10 @@
 import React from 'react';
+import './ActorItemsDetails.css';
 
 const ActorItemsDetails = ({ actor }) => {
   return (
-    <div style={styles.container}>
-      <div style={styles.imageContainer}>
+    <div className='container' style={styles.container}>
+      <div className='image-container' style={styles.imageContainer}>
         <img 
           src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`} 
           alt={actor.name} 
@@ -36,7 +37,6 @@ const styles = {
   },
   imageContainer: {
     flex: '0 0 300px',
-    marginRight: '20px',
   },
   image: {
     width: '100%',
@@ -58,6 +58,12 @@ const styles = {
   },
   biography: {
     lineHeight: '1.6',
+    textAlign: 'justify',
+    maxHeight: '200px',
+    overflow: 'auto',
+    marginBottom: '20px',
+    paddingRight: '8px',
+     textOverflow: 'ellipsis',
   },
   aliasList: {
     columns: 2,

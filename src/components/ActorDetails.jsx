@@ -83,6 +83,6 @@ const styles = {
         borderRadius: '5px',
         cursor: 'pointer',
         marginBottom: '20px',
-        margin: 'auto 90%'
+        margin: 'auto 70%'
     }
 };
