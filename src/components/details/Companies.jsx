@@ -2,9 +2,9 @@ import React from 'react';
 
 
 const Companies = ({ companies }) =>  (
-    <div style={styles.productionCompanies}>
+    <div  style={styles.productionCompanies}>
         <h3>Production Companies</h3>
-        <div style={styles.companyList} >
+        <div className='company-container' style={styles.companyList} >
             {companies?.map((company) => (
                 <div key={company.id} style={styles.companyItem} >
                     {company.logo_path && (

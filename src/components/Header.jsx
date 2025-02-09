@@ -45,9 +45,9 @@ const styles = {
   link: {
     textDecoration: 'none',
     color: '#333',
-    padding: '10px',
+    
     width: '100%', // Make links fill the width
-    textAlign: 'center', // Center link text
+    
   },
   hamburgerButton: { // Style for the hamburger button
     display: 'flex',
@@ -92,6 +92,12 @@ export default function Header({ logoImage }) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const showNavLinks = () =>{
+    if (window.innerWidth < 1200) {
+      return isMobileMenuOpen ? { display: 'flex' } : { display: 'none' };
+    } 
+  }
+
 
   return (
     <header className='header'>
@@ -119,7 +125,7 @@ export default function Header({ logoImage }) {
 
 
       {/* Conditionally render the navigation links */}
-      <nav className='nav-links'>
+      <nav className='nav-links' style={showNavLinks()}>
         <Link to="/" style={styles.link}>Now Playing</Link>
         <Link to="/upcoming" style={styles.link}>Upcoming</Link>
         <Link to="/top-rated" style={styles.link}>Top Rated</Link>

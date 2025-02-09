@@ -5,6 +5,7 @@ import useMovieFullDetails from '../CustomHooks/useMovieFullDetails'
 import Genres from './details/Genres';
 import Companies from './details/Companies';
 import Reparto from './details/Reparto';
+import './MovieDetails.css'
 
 
 const options = {
@@ -15,9 +16,10 @@ const options = {
     },
   };
 
-
+const isMobile = window.innerWidth < 700; // Define si es móvil
 const MovieDetails = () => {
-    
+      
+      
     const navigate = useNavigate();
     const { id } = useParams();;
     const { movie, cast, loading, error } = useMovieFullDetails(id)
@@ -41,9 +43,9 @@ const MovieDetails = () => {
     
     return (
         <>
-            <div className="movie-details" style={styles.containerMovieDetails}>
+            <div className="movie-details">
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} style={styles.movieImage} />
-                <div style={styles.movieDetailsData}>
+                <div className='movie-details-data'>
                     <h1>{movie.title}</h1>
                     <p> <span style={styles.textDate}>{movie.release_date} </span> { <Genres movie={movie} />   } </p>
                     <p style={styles.circleAverage} > {movie.vote_average.toFixed(1)}</p>
@@ -60,7 +62,7 @@ const MovieDetails = () => {
                 onClick={handleGoBack}
                 aria-label="Volver"
                 >
-                Volver
+                Volver ty
             </button>
         </>
     );
@@ -69,25 +71,9 @@ const MovieDetails = () => {
 export default MovieDetails;
 
 const styles = {
-    containerMovieDetails: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'flex-start',
-        paddingTop: '20px',
-        paddingBottom: '20px',
-        borderRadius: '5px',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-        marginTop: '20px',
-       
-    },
-    movieDetailsData: {
-        flex: 1,
-        maxWidth: '50%',
-        textAlign: 'left',
-        padding:'0',
-        margin: '0',
-    }, 
+    
+    
+   
     movieImage: {
         maxWidth: '40%',
         maxHeight: '480px',

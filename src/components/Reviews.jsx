@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ACCEPT, AUTHORIZATION } from '../consts/CONSTS'
+import './Reviews.css'
 
 
 const options = {
@@ -55,9 +56,9 @@ export default function Reviews() {
 
     return (
         <>
-            <div className="movie-details" style={styles.containerMovieDetails}>
+            <div className="movie-review-details" >
                 <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} style={styles.movieImage} />
-                <div style={styles.movieDetailsData}>
+                <div className="movie-review-details-data">
                     <h1>{movie.title}</h1>
                     <p> <span style={styles.textDate}>{movie.release_date} </span> </p>
                     <p style={styles.circleAverage} > {movie.vote_average.toFixed(1)}</p>
@@ -76,7 +77,7 @@ export default function Reviews() {
                 <h2>Reviews</h2>
                 {reviews?.map((review, index) => (
                     <div key={review.id} style={styles.review}>
-                        <div style={styles.reviewHeader} > 
+                        <div className='review-header' > 
                             { review.author_details.avatar_path && 
                                 <img src={`https://image.tmdb.org/t/p/w500${review.author_details.avatar_path}`} 
                                     alt={review.username} 
@@ -87,8 +88,11 @@ export default function Reviews() {
                                 !review.author_details.avatar_path &&
                                 <img src="https://via.placeholder.com/150" alt={review.username} style={styles.circleAverage} />
                             }
-                            <p style={styles.textAuthor}>{review.author}</p>
-                            <p style={styles.textDate}>{review.created_at}</p>
+                            <div>
+                                <p style={styles.textAuthor}>{review.author}</p>
+                                <p style={styles.textDate}>{review.created_at}</p>
+
+                            </div>
                         </div>
                         <p style={styles.textContentReview}>{review.content}</p>
                     </div>
@@ -124,13 +128,7 @@ const styles = {
         borderRadius: '5px',
         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
     },
-    reviewHeader: {
-        display: 'grid',
-        gridTemplateColumns: 'auto auto 1fr',
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        gap: '10px',
-    },
+    
     button: {
         backgroundColor: '#007bff',
         color: '#fff',
@@ -141,7 +139,7 @@ const styles = {
         marginTop: '20px'
     },
     textDate: {
-        fontSize: '12px',
+        fontSize: '8px',
         fontWeight: 'light',
         alignItems: 'center',
         color: '#000',

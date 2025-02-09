@@ -1,0 +1,30 @@
+.movie-review-details {
+    display: flex;
+    flex-direction: row; /* Default: row (desktop) */
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 20px; /* Combined padding */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+
+.movie-review-details-data{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.review-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+  
+  @media (max-width: 767px) { /* Adjust breakpoint as needed (e.g., 768px for typical tablet/mobile breakpoint) */
+    .movie-review-details {
+      flex-direction: column; /* Column on mobile */
+      align-items: center; /* Center items horizontally on mobile */
+    }
+  }

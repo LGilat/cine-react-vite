@@ -17,6 +17,20 @@
     cursor: pointer;
     margin-bottom: 10px;
   }
+
+  .nav-links {
+    display: none; /* Oculto por defecto en móvil */
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0%); /* O la forma que uses para ocultar */
+}
+
+.nav-links.nav-open {
+    transform: translateY(0);
+    display: flex; /* Asegura que se muestre cuando está abierto en móvil */
+}
+
   
 
 
@@ -26,14 +40,16 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        border-bottom-color: rebeccapurple;
-        border-bottom-width: 2px;
     }
     .hamburgerButton{
         display: none;
     }
     .nav-links {
       display: flex;
-      gap: 20px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 0.5;
+      transform: translateY(0); /* Resetea la transformación en escritorio */
     }
 }
